@@ -1,10 +1,14 @@
 import React ,{createContext , useState , useEffect} from "react";
+import { Redirect, useHistory } from "react-router-dom";
+import Cart from "../Page/Cart";
+
 const  capstoneContext  = createContext();
 
+ 
 function ContextProvider(props) {
      let [allPhotos, setAllPhotos] = useState([]);
     let [cartItem , setCartItem] = useState([]);
-
+     const history = useHistory();
       function toggleFavorite(id){
             let updatedArr =    allPhotos.map(obj => {     
          
@@ -38,10 +42,17 @@ function ContextProvider(props) {
           .then((res) => res.json())
           .then((data) => setAllPhotos(data));
     },[])
+    function emptyCart(){
+        setCartItem([]);
+        setTimeout(() =>{
+       history.push('/cart')
+        },2000)
+        history.replace('')
+    }
      
   return (
     <capstoneContext.Provider
-      value={{ allPhotos, toggleFavorite, addToCart, cartItem, removeToCart }}
+      value={{ allPhotos, toggleFavorite, addToCart, cartItem, removeToCart  , emptyCart}}
     >
       {props.children}
     </capstoneContext.Provider>

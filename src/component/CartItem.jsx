@@ -1,9 +1,20 @@
-import React from 'react'
-import { AiFillDelete } from "react-icons/ai";
+import React ,{useState}from 'react'
+import { BsTrashFill, BsTrash } from "react-icons/bs";
+ import { capstoneContext } from '../context/Context';
 function CartItem({item}) {
-  return (
+   const { removeToCart } = React.useContext(capstoneContext);
+   const [isHover , setIsHover] = useState(false)
+      const Icon = isHover ? BsTrashFill : BsTrash
+      console.log(Icon);
+      console.log(isHover);
+   return (
     <div className="cart-item">
-      <AiFillDelete className="ri-delete-bin-line" />
+      <Icon
+        onMouseEnter ={() => setIsHover(true)}
+        onMouseLeave ={() => setIsHover(false)}
+        className="ri-delete-bin-line"
+        onClick={() => removeToCart(item.id)}
+      />
       <img src={item.url} alt={item.url} width="130px" />
       <p>$5.99</p>
     </div>
