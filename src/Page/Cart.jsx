@@ -1,9 +1,22 @@
-import React from 'react'
+import React , {useContext}from 'react'
+import { capstoneContext } from '../context/Context';
+import CartItem from '../component/CartItem';
 
 function Cart() {
+  const {cartItem} = useContext(capstoneContext);
+
+  const cartElement = cartItem.map((item) => (
+    <CartItem key={item.id} item={item} />
+  ));
+  
+
   return (
     <main className="cart-page">
-      <h1>Check it out</h1>
+      {cartElement}
+      <p className="total-cost">Total :</p>
+      <div className="order-button">
+        <button>Place Order</button>
+      </div>
     </main>
   );
 }
