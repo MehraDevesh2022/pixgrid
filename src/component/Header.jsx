@@ -12,9 +12,18 @@ function Header() {
       <Link to="/">
         <h2>Pic Some</h2>
       </Link>
-      <Link to="/cart" className="cart-icon">
-        {cartItem.length > 0 ? <BsFillCartCheckFill/> : <AiOutlineShoppingCart />}
-      </Link>
+      <div className="header-cart">
+        <Link to="/cart" className="cart-icon">
+          {cartItem.length > 0 ? (
+            <BsFillCartCheckFill />
+          ) : (
+            <AiOutlineShoppingCart />
+          )}
+        </Link>
+        <p className={`${cartItem.length > 0 ? `cart-amount filld` : `cart-amount`}`}>
+       {cartItem.length}
+        </p>
+      </div>
     </header>
   );
 }
