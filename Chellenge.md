@@ -137,3 +137,7 @@ Calculate the total cost of the items in the cart and display it on the Cart pag
 `<number>.toLocaleString("en-US", {style: "currency", currency: "USD"})`
 
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toLocaleString
+
+
+// Challenge: 14
+    // Keep track of hover state in this hook

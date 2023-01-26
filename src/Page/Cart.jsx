@@ -6,7 +6,7 @@ import { Link , useRouteMatch } from 'react-router-dom';
 function Cart() {
  const {url} = useRouteMatch()
 
-  const { cartItem, removeToCart, emptyCart } = useContext(capstoneContext);
+  const { cartItem, emptyCart } = useContext(capstoneContext);
 
   const cartElement = cartItem.map((item) => (
     <CartItem key={item.id} item={item} />

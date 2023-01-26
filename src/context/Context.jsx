@@ -1,5 +1,5 @@
 import React ,{createContext , useState , useEffect} from "react";
-import { Redirect, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import Cart from "../Page/Cart";
 
 const  capstoneContext  = createContext();
@@ -9,7 +9,10 @@ function ContextProvider(props) {
      let [allPhotos, setAllPhotos] = useState([]);
     let [cartItem , setCartItem] = useState([]);
      const history = useHistory();
-      function toggleFavorite(id){
+    
+    
+       // favorite add or remove
+     function toggleFavorite(id){
             let updatedArr =    allPhotos.map(obj => {     
          
             if(obj.id ===id){
@@ -42,6 +45,7 @@ function ContextProvider(props) {
           .then((res) => res.json())
           .then((data) => setAllPhotos(data));
     },[])
+  
     function emptyCart(){
         setCartItem([]);
         setTimeout(() =>{
