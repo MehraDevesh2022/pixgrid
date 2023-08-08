@@ -1,6 +1,6 @@
 import React ,{createContext , useState , useEffect} from "react";
 import { useHistory } from "react-router-dom";
-import Cart from "../Page/Cart";
+// import Cart from "../Page/Cart";
 
 const  capstoneContext  = createContext();
 
@@ -26,6 +26,7 @@ function ContextProvider(props) {
       }
 
     function addToCart(id){
+      // eslint-disable-next-line array-callback-return
        allPhotos.map(obj =>{
         if(obj.id === id){
            setCartItem(prv => [...prv , obj]);
@@ -34,7 +35,7 @@ function ContextProvider(props) {
     }
     
     function removeToCart(id){
-        let updatedCart = cartItem.filter(obj => obj.id !=id);
+        let updatedCart = cartItem.filter(obj => obj.id !==id);
         setCartItem([...updatedCart]);
     }
 

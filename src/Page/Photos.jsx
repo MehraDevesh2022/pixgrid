@@ -1,4 +1,4 @@
-import React ,{useState} from 'react'
+import React  from 'react'
 import Image from '../component/Image';
 import { getClass } from "../util/setClass";
 import {capstoneContext} from "../context/Context"
