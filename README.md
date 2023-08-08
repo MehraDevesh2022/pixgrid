@@ -4,7 +4,7 @@ PixGrid is a basic project inspired by the Unsplash application, focusing on a p
 
 ## Demo
 ---
-<img src="./demo.png" alt="demo" width="600"/>
+<img src="./demo.png" alt="demo" width="900"/>
 
 ## Tech Stack
 
