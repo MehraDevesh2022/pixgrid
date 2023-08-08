@@ -5,8 +5,7 @@ function CartItem({item}) {
    const { removeToCart } = React.useContext(capstoneContext);
    const [isHover , setIsHover] = useState(false)
       const Icon = isHover ? BsTrashFill : BsTrash
-      console.log(Icon);
-      console.log(isHover);
+      
    return (
     <div className="cart-item">
       <Icon

@@ -39,13 +39,25 @@ function ContextProvider(props) {
         setCartItem([...updatedCart]);
     }
 
-     useEffect(() =>{
-        fetch(
-          "https://raw.githubusercontent.com/bobziroll/scrimba-react-bootcamp-images/master/images.json"
-        )
-          .then((res) => res.json())
-          .then((data) => setAllPhotos(data));
-    },[])
+useEffect(() => {
+  fetch(
+    "https://raw.githubusercontent.com/bobziroll/scrimba-react-bootcamp-images/master/images.json"
+  )
+    .then((res) => res.json())
+    .then((data) => {
+      // Create duplicates of the data array
+      const duplicatedData1 = [...data];
+      const duplicatedData2 = [...data];
+
+      // Concatenate all three data arrays
+      const combinedData = data.concat(duplicatedData1, duplicatedData2);
+
+      // Set the combined data as the state
+      setAllPhotos(combinedData);
+    });
+}, []);
+
+
   
     function emptyCart(){
         setCartItem([]);

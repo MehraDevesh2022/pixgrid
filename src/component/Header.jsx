@@ -10,7 +10,7 @@ function Header() {
   return (
     <header>
       <Link to="/">
-        <h2>Pic Some</h2>
+        <h2>PixGrid</h2>
       </Link>
       <div className="header-cart">
         <Link to="/cart" className="cart-icon">
@@ -20,8 +20,12 @@ function Header() {
             <AiOutlineShoppingCart />
           )}
         </Link>
-        <p className={`${cartItem.length > 0 ? `cart-amount filld` : `cart-amount`}`}>
-       {cartItem.length}
+        <p
+          className={`${
+            cartItem.length > 0 ? `cart-amount filld` : `cart-amount`
+          }`}
+        >
+          {cartItem.length}
         </p>
       </div>
     </header>
