@@ -24,6 +24,7 @@ function Photos() {
           id={item.id}
           isFavorite={item.isFavorite}
           addToCart
+          index={index}
         />
       ))}
     </main>

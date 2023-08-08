@@ -4,13 +4,7 @@ import { AiOutlineHeart, AiTwotoneHeart, AiFillFileAdd } from "react-icons/ai";
 import PropTypes from "prop-types";
 import { capstoneContext } from "../context/Context";
 
-export default function Image({
-  className,
-  img,
-  toggleFavorite,
-  id,
-  isFavorite,
-}) {
+export default function Image({ className, img, toggleFavorite, id, isFavorite, index }) {
   const { addToCart, cartItem, removeToCart } = useContext(capstoneContext);
   const [ishovered, setIshovered] = useState(false);
 
@@ -41,7 +35,7 @@ export default function Image({
       return (
         <AiFillFileAdd
           className="ri-add-circle-line cart add"
-          onClick={() => addToCart(id)}
+          onClick={() => addToCart(index)}
         />
       );
     }

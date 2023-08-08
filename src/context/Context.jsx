@@ -25,11 +25,11 @@ function ContextProvider(props) {
          
       }
 
-    function addToCart(id){
+    function addToCart(index){
       // eslint-disable-next-line array-callback-return
-       allPhotos.map(obj =>{
-        if(obj.id === id){
-           setCartItem(prv => [...prv , obj]);
+       allPhotos.map((obj ,idx)=>{
+        if (idx === index) {
+          setCartItem((prv) => [...prv, obj]);
         }
        })
     }
